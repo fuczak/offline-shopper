@@ -1,5 +1,28 @@
 <ion-view view-title="Fridge">
-	<ion-content>
-		<h1 class="testingpurpose">Fridge</h1>
-	</ion-content>
+  <ion-nav-buttons side="left">
+    <!-- search toggle button -->
+    <button class="button button-icon" ng-click="data.showDelete = !data.showDelete">
+      <i class="icon ion-ios-minus-outline"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <!-- search toggle button -->
+    <button class="button button-icon" ng-click="openModal()">
+      <i class="icon ion-ios-plus-outline"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <h1>Hey, so - here's your fridge.</h1>
+    <ion-list show-delete="data.showDelete">
+      <ion-item collection-repeat="ingredient in ingredients" item="item" class="item-remove-animate item-icon-right">
+        {{ingredient.name}}
+				<i class="icon icon-accessory ion-chevron-left"></i>
+        <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
+        </ion-delete-button>
+        <ion-option-button class="button-assertive" ng-click="edit(item)">
+          Edit quantity
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>

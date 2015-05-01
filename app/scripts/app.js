@@ -70,7 +70,12 @@ angular.module('offline-shopper', ['ionic', 'ngAnimate'])
       views: {
         'main-fridge': {
           templateUrl: 'templates/main-fridge.html',
-          controller: 'FridgeController'
+          controller: 'FridgeController',
+          resolve: {
+            ingredients: function(IngredientService) {
+              return IngredientService.allIngredients;
+            }
+          }
         }
       }
     });

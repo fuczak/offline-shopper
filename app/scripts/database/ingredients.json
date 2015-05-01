@@ -1,0 +1,90 @@
+[
+	{
+		"name": "entrecote",
+		"unit": "g"
+	},
+	{
+		"name": "water",
+		"unit": "l"
+	},
+	{
+		"name": "broth/turkey breast",
+		"unit": "g"
+	},
+	{
+		"name": "carrot",
+		"unit": "pieces"
+	},
+	{
+		"name": "onion",
+		"unit": "pieces"
+	},
+	{
+		"name": "parsley",
+		"unit": "pieces"
+	},
+	{
+		"name": "celery",
+		"unit": "pieces"
+	},
+	{
+		"name": "garlic clove",
+		"unit": "pieces"
+	},
+	{
+		"name": "leek",
+		"unit": "pieces"
+	},
+	{
+		"name": "salt",
+		"unit": "pieces"
+	},
+	{
+		"name": "vegeta",
+		"unit": "pieces"
+	},
+	{
+		"name": "pepper",
+		"unit": "pieces"
+	},
+	{
+		"name": "parsley leave",
+		"unit": "pieces"
+	},
+	{
+		"name": "lavage",
+		"unit": "pieces"
+	},
+	{
+		"name": "chicken breast",
+		"unit": "g"
+	},
+	{
+		"name": "beetroot",
+		"unit": "pieces"
+	},
+	{
+		"name": "tomato",
+		"unit": "pieces"
+	},
+	{
+		"name": "potato",
+		"unit": "pieces"
+	},
+	{
+		"name": "cabbage",
+		"unit": "pieces"
+	},
+	{
+		"name": "lemon juice",
+		"unit": "tsp."
+	},
+	{
+		"name": "olive oil",
+		"unit": "pieces"
+	},
+	{
+		"name": "tomato paste",
+		"unit": "pieces"
+	}
+]
