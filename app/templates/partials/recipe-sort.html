@@ -1,0 +1,16 @@
+<ion-popover-view>
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title">Sort recipes by:</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <p class="item" ng-click="reverse=!reverse; order('name', reverse); nameicon=!nameicon">
+        Name <i class="icon icon-accessory" ng-class="{'ion-chevron-up': nameicon, 'ion-chevron-down': !nameicon}"></i>
+      </p>
+      <p class="item" ng-click="reverse=!reverse; order('cookTime', reverse); timeicon=!timeicon">
+        Cooking time <i class="icon icon-accessory" ng-class="{'ion-chevron-up': timeicon, 'ion-chevron-down': !timeicon}"></i>
+      </p>
+      {{predicate}}
+    </div>
+  </ion-content>
+</ion-popover-view>

@@ -1,0 +1,13 @@
+<ion-view view-title="{{recipe.name}}">
+	<ion-content class="padding">
+		<h1>{{recipe.name}}</h1>
+    <span class="padding badge badge-assertive" ng-repeat="tag in recipe.tags">{{tag}} </span>
+    <span>Time to prepare: {{recipe.prepTime}}</span>
+    <span>Time to cook: {{recipe.cookTime}}</span>
+    {{recipe.description}}
+    <hr>
+    <h2>Ingredients:</h2>
+    <br>
+    <span ng-repeat="ingredient in recipe.ingredients">{{ingredient.name}} + </span>
+	</ion-content>
+</ion-view>
