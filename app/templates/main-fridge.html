@@ -7,8 +7,8 @@
   </ion-nav-buttons>
   <ion-content>
     <h1>Hey, so - here's your fridge.</h1>
-    <ion-list show-delete="data.showDelete">
-      <ion-item collection-repeat="ingredient in ingredients" item="item" class="item-remove-animate item-icon-right">
+    <ion-list>
+      <ion-item collection-repeat="ingredient in userIngredients" item="item" class="item-remove-animate item-icon-right">
         {{ingredient.name}}
 				<i class="icon icon-accessory ion-chevron-left"></i>
         <ion-option-button ng-click="edit(item)">

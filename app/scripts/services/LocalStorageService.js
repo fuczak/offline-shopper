@@ -1,6 +1,6 @@
 'use strict';
 angular.module('offline-shopper')
-  .factory('$localstorage', function($window) {
+  .factory('$localstorage', ['$window', function($window) {
     return {
       set: function(key, value) {
         $window.localStorage[key] = value;
@@ -15,4 +15,4 @@ angular.module('offline-shopper')
         return JSON.parse($window.localStorage[key]) || {};
       }
     };
-  });
+  }]);

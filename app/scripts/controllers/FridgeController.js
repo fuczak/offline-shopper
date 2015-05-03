@@ -2,7 +2,6 @@
 angular.module('offline-shopper')
   .controller('FridgeController', function(IngredientService, ingredients, $ionicModal, $scope, $localstorage) {
     $scope.ingredients = ingredients.data;
-    //$scope.user = $localstorage.getObject('offline-shopper.user');
 
     $ionicModal.fromTemplateUrl('templates/partials/add-ingredient.html', {
       scope: $scope,
@@ -20,7 +19,15 @@ angular.module('offline-shopper')
       $scope.modal.remove();
     });
 
-    $scope.addIngredient = function(ingredient) {
-      IngredientService.addIngredient(ingredient);
+    $scope.updateFridge = function(ingredients) {
+      var output = [];
+      ingredients.forEach(function(e) {
+        if(e.checked) {
+          output.push(e);
+        }
+      });
+      console.log(output);
+      $scope.closeModal();
     };
+
   });
