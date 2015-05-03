@@ -22,13 +22,14 @@
     </div>
 		<!-- recipe list -->
     <ion-list>
-      <ion-item class="item item-icon-right" ng-repeat="recipe in recipes | filter:searchText" href="#/main/recipe/{{recipe.id}}">
+      <ion-item class="item item-icon-right" ng-repeat="recipe in recipes | filter:searchText" href="#/main/recipe/{{recipe.id}}" on-swipe-left="popover.show($event)">
 				<span class="badge">{{recipe.cookTime + recipe.prepTime}} min.</span>
         <h2>{{recipe.name}}</h2>
         <h5 class="text-small icon-accessory">
           <span ng-repeat="tag in recipe.tags">{{tag | lowercase}} </span>
         </h5>
         <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button></ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>
