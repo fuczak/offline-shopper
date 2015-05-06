@@ -6,17 +6,23 @@
     </button>
   </ion-nav-buttons>
   <ion-content>
-    <h1>Hey, so - here's your fridge.</h1>
+    <h1 ng-if="userIngredients.length === 0">Hey, so - here's your fridge.</h1>
     <ion-list>
-      <ion-item collection-repeat="ingredient in userIngredients" item="item" class="item-remove-animate item-icon-right">
-        {{ingredient.name}}
-				<i class="icon icon-accessory ion-chevron-left"></i>
-        <ion-option-button ng-click="edit(item)">
-          Edit quantity
-        </ion-option-button>
-        <ion-option-button>
-          <i class="icon ion-minus-circled assertive"></i>
-        </ion-option-button>
+      <ion-item ng-repeat="ingredient in userIngredients" class="item-icon-right" ng-if="ingredient.isChecked">
+        <div class="row">
+          <div class="col col-75">
+            <p>{{ingredient.name | uppercase}}</p>
+          </div>
+          <div class="col">
+            <i class="icon icon-accessory ion-chevron-left"></i>
+            <span class="item-note">
+              <input class="fridge-input" type="number" placeholder="0">{{ingredient.unit}}
+            </span>
+            <ion-option-button ng-click="removeIngredient($index)">
+              <i class="icon ion-minus-circled assertive"></i>
+            </ion-option-button>
+          </div>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>

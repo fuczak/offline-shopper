@@ -1,7 +1,9 @@
 'use strict';
 angular.module('offline-shopper')
-  .controller('FridgeController', function(IngredientService, ingredients, $ionicModal, $scope, $localstorage) {
-    $scope.ingredients = ingredients.data;
+  .controller('FridgeController', function(IngredientService, ingredients, $ionicModal, $scope) {
+    //$scope.ingredients = ingredients.data;
+    $scope.userIngredients = IngredientService.userIngredients;
+    $scope.ingredients = $scope.userIngredients.length > 0 ? $scope.userIngredients : ingredients.data;
 
     $ionicModal.fromTemplateUrl('templates/partials/add-ingredient.html', {
       scope: $scope,
@@ -22,12 +24,18 @@ angular.module('offline-shopper')
     $scope.updateFridge = function(ingredients) {
       var output = [];
       ingredients.forEach(function(e) {
-        if(e.checked) {
+        if(e.isChecked) {
           output.push(e);
         }
       });
-      console.log(output);
+      IngredientService.setFridge(ingredients);
+      $scope.userIngredients = output;
       $scope.closeModal();
+    };
+
+    $scope.removeIngredient = function(index) {
+      $scope.userIngredients[index].isChecked = false;
+      IngredientService.setFridge($scope.userIngredients);
     };
 
   });

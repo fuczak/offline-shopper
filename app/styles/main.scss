@@ -1,0 +1,52 @@
+* {
+  font-family: 'Roboto' !important;
+}
+.platform-android .bar-subheader.has-tabs-top{
+  top:93px !important;
+}
+
+.platform-android .has-subheader.has-tabs-top{
+  top:137px;
+}
+input.fridge-input {
+  display: inline;
+}
+.inFridge {
+  background-color: honeydew !important;
+}
+.bar.ng-hide-add {
+  animation: 0.3s fadeOutUp ease;
+}
+.bar.ng-hide-remove {
+  animation: 0.3s fadeInDown ease;
+}
+@keyframes fadeOutUp {
+  0% {
+    height: 44px;
+    padding: 10px;
+    opacity: 1;
+  }
+  100% {
+    height: 0px;
+    padding: 0px;
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    height: 0px;
+    padding: 0px;
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    height: 44px;
+    padding: 10px;
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

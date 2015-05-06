@@ -17,16 +17,4 @@ angular.module('offline-shopper')
       if(!!$scope.popover) { $scope.popover.hide(); }
     };
     $scope.order('name', false);
-
-    $scope.toggleSearch = function() {
-      if($scope.showSearch) {
-        $scope.showSearch = false;
-      } else {
-        $scope.showSearch = true;
-      }
-    };
-
-    $scope.clearSearch = function() {
-      $scope.searchText = '';
-    };
   });

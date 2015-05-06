@@ -1,6 +1,6 @@
 'use strict';
 angular.module('offline-shopper')
-  .service('IngredientService', function($http) {
+  .service('IngredientService', function($http, $localstorage) {
 
     var ingredients = $http.get('scripts/database/ingredients.json')
       .success(function(data) {
@@ -10,14 +10,13 @@ angular.module('offline-shopper')
         return error;
       });
 
+    var fridge = $localstorage.getObject('of-sh-fridge');
+
     var o = {
       allIngredients: ingredients,
-      getIngredient: function(id) {
-        return o.allIngredients.then(function(data) {
-          return data.data[id];
-        }, function(error) {
-          return error;
-        });
+      userIngredients: fridge,
+      setFridge: function(data) {
+        $localstorage.setObject('of-sh-fridge', data);
       }
     };
 
